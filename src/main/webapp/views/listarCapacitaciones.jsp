@@ -1,3 +1,5 @@
+<%@ page import="modelo.Capacitacion" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,25 +16,36 @@
 		<table class="table">
 				<thead>
 					<tr>
-						<th scope="col">#</th>
+						<th scope="col">ID</th>
 						<th scope="col">Rut Cliente</th>
 						<th scope="col">Día</th>
 						<th scope="col">Fecha</th>
 						<th scope="col">Hora</th>
+						<th scope="col">Lugar</th>
 						<th scope="col">Duración</th>
 						<th scope="col">Asistentes</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-					</tr>
+					 <% List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones"); %>
+				        <% if (capacitaciones != null && !capacitaciones.isEmpty()) { %>
+				            <% for (Capacitacion capacitacion : capacitaciones) { %>
+				                <tr>
+				                    <td><%= capacitacion.getIdCapacitacion() %></td>
+				                    <td><%= capacitacion.getRutCliente() %></td>
+				                    <td><%= capacitacion.getDia() %></td>
+				                    <td><%= capacitacion.getFecha() %></td>
+				                    <td><%= capacitacion.getHora() %></td>
+				                    <td><%= capacitacion.getLugar() %></td>
+				                    <td><%= capacitacion.getDuracion() %></td>
+				                    <td><%= capacitacion.getAsistentes() %></td>
+				                </tr>
+				            <% } %>
+				        <% } else { %>
+			            <tr>
+			                <td colspan="8">No se encontraron capacitaciones.</td>
+			            </tr>
+			        <% } %>
 				</tbody>
 			</table>
 		</div>

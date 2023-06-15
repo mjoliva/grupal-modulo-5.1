@@ -9,24 +9,36 @@ public class Capacitacion {
 	private String dia;
 	private LocalDate fecha;
 	private LocalTime hora;
+	private String lugar;
 	private float duracion;
 	private int asistentes;
+	private static int autoIncremento = 1000;
+	private final String id;
 
 	
 	public Capacitacion() {
-
+		this.id = "cap-" + (++autoIncremento);
 	}
 
-	public Capacitacion(String idCapacitacion, String rutCliente, String dia, LocalDate fecha, LocalTime hora,
+	public Capacitacion( String rutCliente, String dia, LocalDate fecha, LocalTime hora,String lugar,
 			float duracion, int asistentes) {
-		
-		this.idCapacitacion = idCapacitacion;
+		this();
+		this.idCapacitacion = id;
 		this.rutCliente = rutCliente;
 		this.dia = dia;
 		this.fecha = fecha;
 		this.hora = hora;
+		this.lugar = lugar;
 		this.duracion = duracion;
 		this.asistentes = asistentes;
+	}
+
+	public String getIdCapacitacion() {
+		return idCapacitacion;
+	}
+
+	public void setIdCapacitacion(String idCapacitacion) {
+		this.idCapacitacion = idCapacitacion;
 	}
 
 	public String getRutCliente() {
@@ -61,12 +73,16 @@ public class Capacitacion {
 		this.hora = hora;
 	}
 
-	public float getDuracion() {
-		return duracion;
+	public String getLugar() {
+		return lugar;
 	}
 
-	public void setIdCapacitacion(String idCapacitacion) {
-		this.idCapacitacion = idCapacitacion;
+	public void setLugar(String lugar) {
+		this.lugar = lugar;
+	}
+
+	public float getDuracion() {
+		return duracion;
 	}
 
 	public void setDuracion(float duracion) {
@@ -81,13 +97,12 @@ public class Capacitacion {
 		this.asistentes = asistentes;
 	}
 
-	public String getIdCapacitacion() {
-		return idCapacitacion;
-	}
-
 	@Override
 	public String toString() {
 		return "Capacitacion [idCapacitacion=" + idCapacitacion + ", rutCliente=" + rutCliente + ", dia=" + dia
-				+ ", fecha=" + fecha + ", hora=" + hora + ", duracion=" + duracion + ", asistentes=" + asistentes + "]";
+				+ ", fecha=" + fecha + ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion
+				+ ", asistentes=" + asistentes + "]";
 	}
+
+	
 }

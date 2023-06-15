@@ -15,7 +15,7 @@
 		<h1 class="text-center">Crear capacitación</h1>
 		<div class="row justify-content-center">
 			<div class="col-6">
-				<form action="/crear-capacitacion" method="post"
+				<form action="/grupal-modulo-5/crear-capacitacion" method="post"
 					id="formCreateCapacitacion">
 					<div class="mb-3">
 						<label for="rutCliente" class="form-label">Rut Cliente</label> <input
@@ -33,7 +33,7 @@
 					</div>
 					<div class="mb-3">
 						<label for="hora" class="form-label">Hora:</label> <input
-							type="text" class="form-control" id="hourCapacitacion" name="hour">
+							type="time" class="form-control" id="hourCapacitacion" name="hour">
 					</div>
 					<div class="mb-3">
 						<label for="lugar" class="form-label">Lugar:</label> <input

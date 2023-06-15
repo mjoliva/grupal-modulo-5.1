@@ -1,6 +1,8 @@
 package controlador;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,12 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.CapacitacionDAO;
+import modelo.Capacitacion;
+
 /**
  * Servlet implementation class CrearCapacitacion
  */
 @WebServlet("/crear-capacitacion")
 public class CrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -45,9 +51,20 @@ System.out.println("Hola en Crear capacitacion con POST");
 		System.out.println(request.getParameter("lugar"));
 		System.out.println(request.getParameter("duracion"));
 		System.out.println(request.getParameter("asistentes"));
-				
-		request.setAttribute("returnRut", request.getParameter("rut"));
-		request.getRequestDispatcher("views/crearCapacitaciones").forward(request, response);
+		
+		String rut = request.getParameter("rut");
+		String dia = request.getParameter("dia");
+		LocalDate date = LocalDate.parse(request.getParameter("date"));
+		LocalTime hora = LocalTime.parse(request.getParameter("hour"));
+		String lugar = request.getParameter("lugar");
+		float duracion = Float.parseFloat(request.getParameter("duracion"));
+		int asistentes = Integer.parseInt(request.getParameter("asistentes"));
+		
+		Capacitacion capacitacion = new Capacitacion(rut,dia,date,hora,lugar,duracion,asistentes);
+		CapacitacionDAO capacitacionDao = CapacitacionDAO.getInstancia();	
+		capacitacionDao.agregarCapacitacion(capacitacion);
+		
+		request.getRequestDispatcher("views/crearCapacitacion.jsp").forward(request, response);
 	}
 
 }
