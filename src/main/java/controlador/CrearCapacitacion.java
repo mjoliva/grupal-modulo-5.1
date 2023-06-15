@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CrearCapacitacion
  */
-@WebServlet("/CrearCapacitacion")
+@WebServlet("/crear-capacitacion")
 public class CrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,7 +28,7 @@ public class CrearCapacitacion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("views/CrearCapacitacion.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("views/crearCapacitacion.jsp");
 		view.forward(request, response); 
 	}
 
@@ -40,9 +40,14 @@ System.out.println("Hola en Crear capacitacion con POST");
 		
 		System.out.println(request.getParameter("rut"));
 		System.out.println(request.getParameter("dia"));
+		System.out.println(request.getParameter("date"));
+		System.out.println(request.getParameter("hour"));
+		System.out.println(request.getParameter("lugar"));
+		System.out.println(request.getParameter("duracion"));
+		System.out.println(request.getParameter("asistentes"));
 				
 		request.setAttribute("returnRut", request.getParameter("rut"));
-		request.getRequestDispatcher("views/listarCapacitaciones.jsp").forward(request, response);
+		request.getRequestDispatcher("views/crearCapacitaciones").forward(request, response);
 	}
 
 }

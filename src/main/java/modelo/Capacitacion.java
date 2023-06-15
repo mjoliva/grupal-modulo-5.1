@@ -4,17 +4,17 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Capacitacion {
-	private final String idCapacitacion;		// autoincremental?
-	private String rutCliente;					// rut cliente asociado
+	private String idCapacitacion;		
+	private String rutCliente;					
 	private String dia;
 	private LocalDate fecha;
 	private LocalTime hora;
 	private float duracion;
 	private int asistentes;
-	private static int autoIncremento = 1000;
+
 	
 	public Capacitacion() {
-		this.idCapacitacion = "cap-" + (++autoIncremento);
+
 	}
 
 	public Capacitacion(String idCapacitacion, String rutCliente, String dia, LocalDate fecha, LocalTime hora,
@@ -65,6 +65,10 @@ public class Capacitacion {
 		return duracion;
 	}
 
+	public void setIdCapacitacion(String idCapacitacion) {
+		this.idCapacitacion = idCapacitacion;
+	}
+
 	public void setDuracion(float duracion) {
 		this.duracion = duracion;
 	}
@@ -75,14 +79,6 @@ public class Capacitacion {
 
 	public void setAsistentes(int asistentes) {
 		this.asistentes = asistentes;
-	}
-
-	public static int getAutoIncremento() {
-		return autoIncremento;
-	}
-
-	public static void setAutoIncremento(int autoIncremento) {
-		Capacitacion.autoIncremento = autoIncremento;
 	}
 
 	public String getIdCapacitacion() {

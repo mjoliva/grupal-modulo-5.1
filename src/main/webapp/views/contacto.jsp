@@ -1,9 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ page isErrorPage="true" %>
-<% if (request.getSession().getAttribute("usuario") == null) {
-		request.getRequestDispatcher("/grupal-modulo-5/views/login.jsp").forward(request, response);	
-	}
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

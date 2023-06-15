@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ListarCapacitaciones
  */
-@WebServlet("/ListarCapacitaciones")
+@WebServlet("/capacitaciones")
 public class ListarCapacitaciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,9 +28,9 @@ public class ListarCapacitaciones extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("views/ListarCapacitaciones.jsp");
-		view.forward(request, response);
 		System.out.println("Respondiendo en GET de servlet Listar Capacitaciones");
+		RequestDispatcher view = request.getRequestDispatcher("views/listarCapacitaciones.jsp");
+		view.forward(request, response);
 	}
 
 	/**

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!-- Error Page Directive -->
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>

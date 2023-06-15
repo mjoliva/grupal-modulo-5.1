@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Contacto
+ * Servlet implementation class ListarUsuarios
  */
-@WebServlet("/contacto")
-public class Contacto extends HttpServlet {
+@WebServlet("/usuarios")
+public class ListarUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Contacto() {
+    public ListarUsuarios() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +28,8 @@ public class Contacto extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("views/contacto.jsp");
+		System.out.println("Respondiendo en GET de servlet Listar Usuarios");
+		RequestDispatcher view = request.getRequestDispatcher("views/listarUsuarios.jsp");
 		view.forward(request, response);
 	}
 
@@ -36,11 +37,7 @@ public class Contacto extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String nombre = request.getParameter("username");
-		String mail = request.getParameter("usermail");
-		String mensaje = request.getParameter("usermessage");
-		System.out.println(nombre + " " + mail+ " "+mensaje);
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
