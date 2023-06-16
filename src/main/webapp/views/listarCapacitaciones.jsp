@@ -24,6 +24,7 @@
 						<th scope="col">Lugar</th>
 						<th scope="col">Duración</th>
 						<th scope="col">Asistentes</th>
+						<th scope="col">Acción</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,6 +40,17 @@
 				                    <td><%= capacitacion.getLugar() %></td>
 				                    <td><%= capacitacion.getDuracion() %></td>
 				                    <td><%= capacitacion.getAsistentes() %></td>
+				                	<td>
+									<form action="modificar-capacitacion" method="GET" style="display:inline">
+									<input type="hidden" name="idCapacitacion" value="<%= capacitacion.getIdCapacitacion() %>">
+									    <input type="submit" class="btn btn-outline-primary" value="Editar">
+									</form>
+									<span>|</span>
+									<form action="eliminar-capacitacion" method="POST" style="display:inline">
+									<input type="hidden" name="idCapacitacion" value="<%= capacitacion.getIdCapacitacion() %>">
+									    <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+									</form>
+				                    </td>
 				                </tr>
 				            <% } %>
 				        <% } else { %>

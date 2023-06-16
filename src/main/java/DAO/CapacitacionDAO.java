@@ -98,8 +98,8 @@ public class CapacitacionDAO {
 	        	 statement.setString(1, capacitacion.getIdCapacitacion());
 	             statement.setString(2, capacitacion.getRutCliente());
 	             statement.setString(3, capacitacion.getDia());
-	             statement.setDate(4, java.sql.Date.valueOf(capacitacion.getFecha()));
-	             statement.setTime(5, java.sql.Time.valueOf(capacitacion.getHora()));
+	             statement.setDate(4, Date.valueOf(capacitacion.getFecha()));
+	             statement.setTime(5, Time.valueOf(capacitacion.getHora()));
 	             statement.setString(6, capacitacion.getLugar());
 	             statement.setFloat(7, capacitacion.getDuracion());
 	             statement.setInt(8, capacitacion.getAsistentes());
@@ -111,18 +111,18 @@ public class CapacitacionDAO {
 	        }
 	    }
 
-	    public void actualizarCapacitacion(Capacitacion capacitacion) {
-	    	 String consulta = "UPDATE capacitacion SET rutCliente = ?, dia = ?, fecha = ?, hora = ?, lugar = ?, duracion = ?, asistentes = ? "+ "WHERE idCapacitacion = ?";
+	    public void actualizarCapacitacion(Capacitacion capacitacion,String idCapacitacion) {
+	    	 String consulta = "UPDATE capacitaciones SET rutCliente = ?, dia = ?, fecha = ?, hora = ?, lugar = ?, duracion = ?, asistentes = ? "+ "WHERE idCapacitacion = ?";
 
 	        try (PreparedStatement statement = conexion.prepareStatement(consulta)) {
 	        	 statement.setString(1, capacitacion.getRutCliente());
 	             statement.setString(2, capacitacion.getDia());
-	             statement.setDate(3, java.sql.Date.valueOf(capacitacion.getFecha()));
-	             statement.setTime(4, java.sql.Time.valueOf(capacitacion.getHora()));
+	             statement.setDate(3, Date.valueOf(capacitacion.getFecha()));
+	             statement.setTime(4, Time.valueOf(capacitacion.getHora()));
 	             statement.setString(5, capacitacion.getLugar());
 	             statement.setFloat(6, capacitacion.getDuracion());
 	             statement.setInt(7, capacitacion.getAsistentes());
-	             statement.setString(8, capacitacion.getIdCapacitacion());
+	             statement.setString(8, idCapacitacion);
 	            statement.executeUpdate();
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -130,7 +130,7 @@ public class CapacitacionDAO {
 	    }
 
 	    public void eliminarCapacitacion(String idCapacitacion) {
-	    	String consulta = "DELETE FROM capacitacion WHERE idCapacitacion = ?";
+	    	String consulta = "DELETE FROM capacitaciones WHERE idCapacitacion = ?";
 
 	        try (PreparedStatement statement = conexion.prepareStatement(consulta)) {
 	        	statement.setString(1, idCapacitacion);
