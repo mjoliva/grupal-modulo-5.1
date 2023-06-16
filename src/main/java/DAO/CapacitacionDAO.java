@@ -1,12 +1,12 @@
 package DAO;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +45,7 @@ public class CapacitacionDAO {
 
 	            while (resultSet.next()) {
 	                Capacitacion capacitacion = new Capacitacion();
-	                capacitacion.setIdCapacitacion(resultSet.getString("idCapacitacion"));
+	                capacitacion.setIdCapacitacion(resultSet.getInt("idCapacitacion"));
 	                capacitacion.setRutCliente(resultSet.getString("rutCliente"));
 	                capacitacion.setDia(resultSet.getString("dia"));
 	                capacitacion.setFecha(resultSet.getDate("fecha").toLocalDate());
@@ -71,7 +71,7 @@ public class CapacitacionDAO {
 	            try (ResultSet result = statement.executeQuery()) {
 	                if (result.next()) {
 	                	capacitacion = new Capacitacion();
-	                    capacitacion.setIdCapacitacion(result.getString("idCapacitacion"));
+	                	capacitacion.setIdCapacitacion(result.getInt("idCapacitacion"));
 	                    capacitacion.setRutCliente(result.getString("rutCliente"));
 	                    capacitacion.setDia(result.getString("dia"));
 	                    capacitacion.setFecha(result.getDate("fecha").toLocalDate());
@@ -90,19 +90,18 @@ public class CapacitacionDAO {
 	    }
 
 	    public void agregarCapacitacion(Capacitacion capacitacion) {
-	        String consulta ="INSERT INTO capacitaciones ( idCapacitacion, rutCliente, dia, fecha, hora, lugar,duracion, asistentes) " + "VALUES (?,?, ?, ?, ?, ?, ?, ?)";
+	        String consulta ="INSERT INTO capacitaciones ( rutCliente, dia, fecha, hora, lugar,duracion, asistentes) " + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 	        try (
 	        		
 	        	PreparedStatement statement = conexion.prepareStatement(consulta)) {
-	        	 statement.setString(1, capacitacion.getIdCapacitacion());
-	             statement.setString(2, capacitacion.getRutCliente());
-	             statement.setString(3, capacitacion.getDia());
-	             statement.setDate(4, Date.valueOf(capacitacion.getFecha()));
-	             statement.setTime(5, Time.valueOf(capacitacion.getHora()));
-	             statement.setString(6, capacitacion.getLugar());
-	             statement.setFloat(7, capacitacion.getDuracion());
-	             statement.setInt(8, capacitacion.getAsistentes());
+	             statement.setString(1, capacitacion.getRutCliente());
+	             statement.setString(2, capacitacion.getDia());
+	             statement.setDate(3, Date.valueOf(capacitacion.getFecha()));
+	             statement.setTime(4, Time.valueOf(capacitacion.getHora()));
+	             statement.setString(5, capacitacion.getLugar());
+	             statement.setFloat(6, capacitacion.getDuracion());
+	             statement.setInt(7, capacitacion.getAsistentes());
 	    
 	            statement.executeUpdate();
 	            
@@ -111,7 +110,7 @@ public class CapacitacionDAO {
 	        }
 	    }
 
-	    public void actualizarCapacitacion(Capacitacion capacitacion,String idCapacitacion) {
+	    public void actualizarCapacitacion(Capacitacion capacitacion) {
 	    	 String consulta = "UPDATE capacitaciones SET rutCliente = ?, dia = ?, fecha = ?, hora = ?, lugar = ?, duracion = ?, asistentes = ? "+ "WHERE idCapacitacion = ?";
 
 	        try (PreparedStatement statement = conexion.prepareStatement(consulta)) {
@@ -122,18 +121,18 @@ public class CapacitacionDAO {
 	             statement.setString(5, capacitacion.getLugar());
 	             statement.setFloat(6, capacitacion.getDuracion());
 	             statement.setInt(7, capacitacion.getAsistentes());
-	             statement.setString(8, idCapacitacion);
+	             statement.setInt(8, capacitacion.getIdCapacitacion());
 	            statement.executeUpdate();
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
 	    }
 
-	    public void eliminarCapacitacion(String idCapacitacion) {
+	    public void eliminarCapacitacion(int idCapacitacion) {
 	    	String consulta = "DELETE FROM capacitaciones WHERE idCapacitacion = ?";
 
 	        try (PreparedStatement statement = conexion.prepareStatement(consulta)) {
-	        	statement.setString(1, idCapacitacion);
+	        	statement.setInt(1, idCapacitacion);
 	            statement.executeUpdate();
 	        } catch (SQLException e) {
 	            e.printStackTrace();

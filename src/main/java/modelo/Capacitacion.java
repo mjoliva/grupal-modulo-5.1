@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Capacitacion {
-	private String idCapacitacion;		
+	private int idCapacitacion;		
 	private String rutCliente;					
 	private String dia;
 	private LocalDate fecha;
@@ -12,18 +12,14 @@ public class Capacitacion {
 	private String lugar;
 	private float duracion;
 	private int asistentes;
-	private static int autoIncremento = 1000;
-	private final String id;
-
 	
 	public Capacitacion() {
-		this.id = "cap-" + (++autoIncremento);
+		
 	}
 
-	public Capacitacion( String rutCliente, String dia, LocalDate fecha, LocalTime hora,String lugar,
-			float duracion, int asistentes) {
-		this();
-		this.idCapacitacion = id;
+	public Capacitacion(String rutCliente, String dia, LocalDate fecha, LocalTime hora, String lugar, float duracion,
+			int asistentes) {
+		super();
 		this.rutCliente = rutCliente;
 		this.dia = dia;
 		this.fecha = fecha;
@@ -31,14 +27,6 @@ public class Capacitacion {
 		this.lugar = lugar;
 		this.duracion = duracion;
 		this.asistentes = asistentes;
-	}
-
-	public String getIdCapacitacion() {
-		return idCapacitacion;
-	}
-
-	public void setIdCapacitacion(String idCapacitacion) {
-		this.idCapacitacion = idCapacitacion;
 	}
 
 	public String getRutCliente() {
@@ -97,12 +85,19 @@ public class Capacitacion {
 		this.asistentes = asistentes;
 	}
 
+	public int getIdCapacitacion() {
+		return idCapacitacion;
+	}
+	
+	public void setIdCapacitacion(int idCapacitacion) {
+		this.idCapacitacion = idCapacitacion;
+	}
+
 	@Override
 	public String toString() {
 		return "Capacitacion [idCapacitacion=" + idCapacitacion + ", rutCliente=" + rutCliente + ", dia=" + dia
 				+ ", fecha=" + fecha + ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion
 				+ ", asistentes=" + asistentes + "]";
 	}
-
 	
 }

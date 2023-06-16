@@ -45,7 +45,7 @@ public class ModificarCapacitacion extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idCapacitacion = request.getParameter("idCapacitacion");
+		int idCapacitacion = Integer.parseInt((request.getParameter("idCapacitacion")));
 		String rut = request.getParameter("rut");
 		String dia = request.getParameter("dia");
 		LocalDate date = LocalDate.parse(request.getParameter("date"));
@@ -55,8 +55,9 @@ public class ModificarCapacitacion extends HttpServlet {
 		int asistentes = Integer.parseInt(request.getParameter("asistentes"));
 		
 		Capacitacion capacitacion = new Capacitacion(rut,dia,date,hora,lugar,duracion,asistentes);
+		capacitacion.setIdCapacitacion(idCapacitacion);
 		CapacitacionDAO capacitacionDao = CapacitacionDAO.getInstancia();	
-		capacitacionDao.actualizarCapacitacion(capacitacion,idCapacitacion);
-		request.getRequestDispatcher("views/listarCapacitacion.jsp").forward(request, response);
+		capacitacionDao.actualizarCapacitacion(capacitacion);
+		request.getRequestDispatcher("capacitaciones").forward(request, response);
 	}
 }

@@ -38,10 +38,10 @@ public class EliminarCapacitacion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CapacitacionDAO capacitacionDao = CapacitacionDAO.getInstancia();
-		String idCapacitacion = request.getParameter("idCapacitacion");
+		int idCapacitacion = Integer.parseInt(request.getParameter("idCapacitacion"));
 		capacitacionDao.eliminarCapacitacion(idCapacitacion);
 		
-		request.getRequestDispatcher("views/listarrCapacitacion.jsp").forward(request, response);
+		request.getRequestDispatcher("capacitaciones").forward(request, response);
 
 	}
 

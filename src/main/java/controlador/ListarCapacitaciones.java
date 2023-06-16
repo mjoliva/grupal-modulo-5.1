@@ -38,10 +38,7 @@ public class ListarCapacitaciones extends HttpServlet {
         List<Capacitacion> capacitaciones = capacitacionDAO.obtenerCapacitaciones();
         
         request.setAttribute("capacitaciones", capacitaciones);
-        
-		
-		
-		RequestDispatcher view = request.getRequestDispatcher("views/listarCapacitaciones.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("views/listarCapacitaciones.jsp");
 		view.forward(request, response);
 	}
 

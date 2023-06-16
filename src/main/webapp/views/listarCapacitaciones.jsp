@@ -32,7 +32,7 @@
 				        <% if (capacitaciones != null && !capacitaciones.isEmpty()) { %>
 				            <% for (Capacitacion capacitacion : capacitaciones) { %>
 				                <tr>
-				                    <td><%= capacitacion.getIdCapacitacion() %></td>
+				                    <td><%= capacitacion.getIdCapacitacion()%></td>
 				                    <td><%= capacitacion.getRutCliente() %></td>
 				                    <td><%= capacitacion.getDia() %></td>
 				                    <td><%= capacitacion.getFecha() %></td>
@@ -55,7 +55,7 @@
 				            <% } %>
 				        <% } else { %>
 			            <tr>
-			                <td colspan="8">No se encontraron capacitaciones.</td>
+			                <td colspan="9">No se encontraron capacitaciones.</td>
 			            </tr>
 			        <% } %>
 				</tbody>
