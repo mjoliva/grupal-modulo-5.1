@@ -13,7 +13,7 @@ import modelo.Capacitacion;
 /**
  * Servlet implementation class EliminarCapacitacion
  */
-@WebServlet("/eliminar-capacitacion")
+@WebServlet(name="EliminarCapacitacion",urlPatterns = {"/eliminar-capacitacion"})
 public class EliminarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

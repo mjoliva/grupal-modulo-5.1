@@ -13,10 +13,11 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/iniciar-sesion")
+@WebServlet(name = "Login",urlPatterns = {"/iniciar-sesion","iniciar-sesion"})
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    //public static String textLogInOutButton = "Iniciar Sesión";   
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,7 +30,24 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("/grupal-modulo-5/views/contacto.jsp");
+				/*
+		 * boton por GET se utilizará para hacer Logout
+		 * Cuando se inicia la sesión se cambiará el texto de 
+		 * "Iniciar Sesión" a "Cerrar Sesión"
+		 * Si el atributo buscado existe, cerrar sesión.
+		 * Si el atributo buscado no existe, quedarse en index.jsp
+		 */
+		if (request.getSession().getAttribute("usuario") == null) {
+			System.out.println("No se ha iniciado sesión, no quedan acciones...");
+		} else {
+			System.out.println("La sesión está iniciada, se cerrará ahora...");
+			//textLogInOutButton = "Cerrar Sesión";
+			request.getSession().invalidate();
+		}
+		
+		//request.setAttribute("textoBotonIngresarSalir", textLogInOutButton);
+		//request.getRequestDispatcher("index.jsp").forward(request, response);
+		RequestDispatcher view = request.getRequestDispatcher("index.jsp");
 		view.forward(request, response);
 	}
 
@@ -45,7 +63,9 @@ public class Login extends HttpServlet {
 				if(usuario.equals("admin") && password.equals("1234")) {
 					session.setAttribute("usuario", usuario);
 					session.setAttribute("password", password);
-					RequestDispatcher view = request.getRequestDispatcher("/grupal-modulo-5/views/contacto.jsp");
+					String mensajeSaludo = "Bienvenido " + usuario;
+					request.setAttribute("saludo", mensajeSaludo);
+					RequestDispatcher view = request.getRequestDispatcher("views/contacto.jsp");
 					view.forward(request, response);	
 				} else {
 					System.out.println("usuario incorrecto");

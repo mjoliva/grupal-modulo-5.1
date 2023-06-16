@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<% if (request.getSession().getAttribute("usuario") == null) {
+		request.getRequestDispatcher("login.jsp").forward(request, response);	
+	} else {
+		System.out.println("la sesión si existe");
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>

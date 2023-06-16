@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Contacto
  */
-@WebServlet("/contacto")
+@WebServlet(name = "Contacto",urlPatterns = {"/contacto"})
 public class Contacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,7 +41,7 @@ public class Contacto extends HttpServlet {
 		String mail = request.getParameter("usermail");
 		String mensaje = request.getParameter("usermessage");
 		System.out.println(nombre + " " + mail+ " "+mensaje);
-		doGet(request, response);
+		request.getRequestDispatcher("views/contacto.jsp").forward(request, response);
 	}
 
 }

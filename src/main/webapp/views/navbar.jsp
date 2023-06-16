@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
   	<div class="container-fluid">
-    	<a class="navbar-brand" href="/grupal-modulo-5/index.jsp">Inicio</a>
+    	<a class="navbar-brand" href="/grupal-modulo-5/index.jsp">${saludo}</a>
     	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     	</button>
@@ -26,7 +26,7 @@
           			<a class="nav-link " aria-current="page" href="/grupal-modulo-5/views/login.jsp">iniciar sesión</a>
         		</li>
         		<li class="nav-item">
-         			<a class="nav-link" href="/grupal-modulo-5/cerrar-sesion">cerrar sesión</a>
+         			<a class="nav-link" href="/grupal-modulo-5/iniciar-sesion">cerrar sesión</a>
         		</li>
       		</ul>
     	</div> <!-- Ends navbar-collapse -->

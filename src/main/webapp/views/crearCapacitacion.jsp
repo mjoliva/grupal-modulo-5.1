@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<% if (request.getSession().getAttribute("usuario") == null) {
+		request.getRequestDispatcher("login.jsp").forward(request, response);	
+	} else {
+		System.out.println("la sesiÃ³n si existe");
+	}
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +20,7 @@
 	<%@ include file='/views/navbar.jsp'%>
 
 	<main class="container">
-		<h1 class="text-center">Crear capacitación</h1>
+		<h1 class="text-center">Crear capacitaciÃ³n</h1>
 		<div class="row justify-content-center">
 			<div class="col-6">
 				<form action="/grupal-modulo-5/crear-capacitacion" method="post"
@@ -22,7 +30,7 @@
 							type="text" class="form-control" id="rut" name="rut">
 					</div>
 					<div class="mb-3">
-						<label for="dia" class="form-label">Día:</label> <input
+						<label for="dia" class="form-label">DÃ­a:</label> <input
 							type="text" class="form-control" id="dayCapacitacion" name="dia"
 							placeholder="en palabras [lunes-domingo]">
 					</div>
@@ -40,7 +48,7 @@
 							type="text" class="form-control" id="lugar" name="lugar">
 					</div>
 					<div class="mb-3">
-						<label for="duracion" class="form-label">Duración:</label> <input
+						<label for="duracion" class="form-label">DuraciÃ³n:</label> <input
 							type="number" class="form-control" id="duracion" name="duracion">
 					</div>
 					<div class="mb-3">

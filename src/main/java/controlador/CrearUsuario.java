@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CrearUsuario
  */
-@WebServlet("/crear-usuario")
+@WebServlet(name="CrearUsuario",urlPatterns = {"/crear-usuario"})
 public class CrearUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

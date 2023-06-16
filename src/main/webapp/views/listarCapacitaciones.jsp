@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<% if (request.getSession().getAttribute("usuario") == null) {
+		request.getRequestDispatcher("login.jsp").forward(request, response);	
+	} else {
+		System.out.println("la sesiÃ³n si existe");
+	}
+%>
+
 <%@ page import="modelo.Capacitacion" %>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html>
@@ -18,13 +26,13 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Rut Cliente</th>
-						<th scope="col">Día</th>
+						<th scope="col">DÃ­a</th>
 						<th scope="col">Fecha</th>
 						<th scope="col">Hora</th>
 						<th scope="col">Lugar</th>
-						<th scope="col">Duración</th>
+						<th scope="col">DuraciÃ³n</th>
 						<th scope="col">Asistentes</th>
-						<th scope="col">Acción</th>
+						<th scope="col">AcciÃ³n</th>
 					</tr>
 				</thead>
 				<tbody>

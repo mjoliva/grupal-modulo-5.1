@@ -16,7 +16,7 @@ import modelo.Capacitacion;
 /**
  * Servlet implementation class ModificarAndEliminar
  */
-@WebServlet("/modificar-capacitacion")
+@WebServlet(name="ModificarCapacitacion",urlPatterns = {"/modificar-capacitacion"})
 public class ModificarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
