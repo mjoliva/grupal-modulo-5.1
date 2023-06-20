@@ -29,3 +29,4 @@ function capSubmitHandler(e) {
 	// si los datos son malos avisar y pedir nuevamente
 	// si son buenos hacer fetch por POST
 }
+

@@ -43,5 +43,9 @@ public class Contacto extends HttpServlet {
 		System.out.println(nombre + " " + mail+ " "+mensaje);
 		request.getRequestDispatcher("views/contacto.jsp").forward(request, response);
 	}
+	
+	public static void mostrarDatosFormulario(String nombre,String mail,String mensaje) {
+		System.out.println(nombre + " " + mail+ " "+mensaje);
+	}
 
 }

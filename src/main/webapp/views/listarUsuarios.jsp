@@ -14,31 +14,96 @@
 </head>
 <body>
 	<%@ include file='/views/navbar.jsp'%>
-
+	<%@ page import="modelo.*" %>
+	<%@ page import="java.util.*" %>
 	<main class="container py-5">
 		<h1 class="text-center">Listado de Usuarios</h1>
 		<div class="row">
 		<div class="col py-4 w-75 justify-content-center text-center">
-		<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Rut</th>
-						<th scope="col">Nombre</th>
-						<th scope="col">Apellido</th>
-						<th scope="col">Fecha Nacimiento</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>Mark</td>
-					</tr>
-				</tbody>
-			</table>
+		 <table class="table table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <th scope="col">Rut</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Fecha de Nacimiento</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Comuna</th>
+                        <th scope="col">AFP</th>
+                        <th scope="col">Sistema de Salud</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">Experiencia Previa</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <!-- >Rut	Nombres	Apellidos	Fecha de Nacimiento	Telefono	Dirección	Comuna	AFP	Sistema de Salud	Edad	Area	Experiencia Previa	Titulo	Fecha de Ingreso -->
+                <tbody>
+                    <% List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios"); %>
+				        <% if (usuarios != null && !usuarios.isEmpty()) { %>
+				            <% for (Usuario u : usuarios) { %>
+                				<% String tipo = u.getClass().getSimpleName(); %>
+				          
+				                <tr>
+				                    <td><%= u.getRut()%></td> <!-- Rut -->
+				                    <td><%= u.getNombres()%></td> <!-- Nombres -->
+				                    <td><%= u.getApellidos()%></td> <!-- Apellidos -->
+				                    <td><%= u.getFechaNacimiento()%></td> <!-- FechaNacimiento -->
+				                    <% if (u instanceof Cliente) {%> <!-- Valida tipo de cliente COPIAR DESDE ACÁ--> 
+									<% Cliente c = (Cliente) u; %> 
+				                    <td><%= c.getTelefono()%></td> <!-- Telefono -->
+				                    <td><%= c.getDireccion() %></td> <!-- Direccion -->
+				                    <td><%= c.getComuna() %></td> <!-- Comuna -->
+				                    <td><%= c.getAfp() %></td> <!-- Afp -->
+				                    <td><%= c.getSistemaSalud() %></td> <!-- Sistema Salud -->
+				                    <td><%= c.getEdad() %></td> <!-- Edad -->
+				                    <%} else {%>
+				                    <td>--</td> <!-- Telefono -->
+				                    <td>--</td> <!-- Direccion -->
+				                    <td>--</td> <!-- Comuna -->
+				                    <td>--</td> <!-- Afp -->
+				                    <td>--</td> <!-- Sistema Salud -->
+				                    <td>--</td> <!-- Edad -->
+				                    <% }%>
+				                    <% if (u instanceof Administrativo){ %>
+				                    <% Administrativo a = (Administrativo ) u; %>
+				                    <td><%= a.getArea()%></td>
+				                    <td><%= a.getExpPrevia() %></td>
+				                    <%} else { %>
+				                    <td>--</td>
+				                    <td>--</td>
+				                    <% }%>
+				                    <% if (u instanceof Profesional) {%>
+				                    <% Profesional p = (Profesional) u; %>
+				                    <td><%=  p.getTitulo()%></td>
+				                    <td><%=  p.getFechaIngreso()%></td>
+				                	<%} else{%>
+				                	<td>--</td>
+				                    <td>--</td>
+				                	<%} %>
+				                	<td>
+									<form action="#" method="GET" style="display:inline">
+									<input type="hidden" name="id" value="<%= u.getId() %>">
+									    <input type="submit" class="btn btn-outline-primary" value="Editar">
+									</form>
+									<span>|</span>
+									<form action="#" method="POST" style="display:inline">
+									<input type="hidden" name="id" value="<%= u.getId() %>">
+									    <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+									</form>
+				                    </td>
+				                </tr>
+				            <% } %>
+				        <% } else { %>
+			            <tr>
+			                <td colspan="14">No se encontraron capacitaciones.</td>
+			            </tr>
+			        <% } %>
+                </tbody>
+            </table>
 		</div>
 		</div>
 	</main>

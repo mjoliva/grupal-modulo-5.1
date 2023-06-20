@@ -24,3 +24,8 @@ body {
 	background-repeat: none;
 	color: white;	
 }
+
+.table {
+	height: 50vh !important;
+	overflow-x: scroll !important;
+}

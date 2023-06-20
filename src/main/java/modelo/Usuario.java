@@ -2,6 +2,7 @@ package modelo;
 import java.time.LocalDate;
 
 public class Usuario {
+	protected int id;
 	protected String rut; 
 	protected String nombres;
 	protected String apellidos;
@@ -16,6 +17,14 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getRut() {
 		return rut;
 	}

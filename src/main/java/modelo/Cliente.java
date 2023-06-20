@@ -6,13 +6,13 @@ public class Cliente extends Usuario{
 	private String direccion;
 	private String comuna;
 	private String afp;
-	private int sistemaSalud;
+	private String sistemaSalud;
 	private int edad;
 	
 	public Cliente() {}
 	
 	public Cliente(String rut, String nombres, String apellidos, LocalDate fechaNacimiento, String telefono,
-			String direccion, String comuna, String afp, int sistemaSalud, int edad) {
+			String direccion, String comuna, String afp, String sistemaSalud, int edad) {
 		super(rut, nombres, apellidos, fechaNacimiento);
 		this.telefono = telefono;
 		this.direccion = direccion;
@@ -54,11 +54,11 @@ public class Cliente extends Usuario{
 		this.afp = afp;
 	}
 
-	public int getSistemaSalud() {
+	public String getSistemaSalud() {
 		return sistemaSalud;
 	}
 
-	public void setSistemaSalud(int sistemaSalud) {
+	public void setSistemaSalud(String sistemaSalud) {
 		this.sistemaSalud = sistemaSalud;
 	}
 

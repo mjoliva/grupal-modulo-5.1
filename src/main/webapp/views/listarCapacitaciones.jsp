@@ -21,7 +21,7 @@
 		<h1 class="text-center">Listado de Capacitaciones</h1>
 		<div class="row">
 		<div class="col py-4 w-75 justify-content-center text-center">
-		<table class="table">
+		<table class="table table-striped table-hover">
 				<thead>
 					<tr>
 						<th scope="col">ID</th>
