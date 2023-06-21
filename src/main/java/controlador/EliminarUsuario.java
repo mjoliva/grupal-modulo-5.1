@@ -37,7 +37,7 @@ public class EliminarUsuario extends HttpServlet {
 		//inst
 			UsuarioDAO usuarioDAO =  UsuarioDAO.getInstancia();
 		//delete id
-			UsuarioDAO.eliminarUsuario(id);
+//			UsuarioDAO.eliminarUsuario(id);
 		//say its ok
 			response.getWriter().println("Usuario eliminado correctamente");
 		} else {

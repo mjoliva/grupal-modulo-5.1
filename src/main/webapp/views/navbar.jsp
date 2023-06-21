@@ -6,7 +6,8 @@
     	</button>
     	<div class="collapse navbar-collapse" id="navbarSupportedContent">
       		<ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
-        		<li class="nav-item dropdown">
+   				<% 	if (request.getSession().getAttribute("usuario") != null && request.getSession().getAttribute("usuario").equals("admin")) { %>
+   				<li class="nav-item dropdown">
           			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             			Opciones
           			</a>
@@ -22,12 +23,14 @@
 	            		<li><a class="dropdown-item" href="/grupal-modulo-5/usuarios">Listar Usuarios</a></li>
 	          		</ul>
         		</li>
+    		   <li class="nav-item">
+         			<a class="nav-link" href="/grupal-modulo-5/iniciar-sesion">cerrar sesión</a>
+        		</li>
+        		<%} else { %>
         		<li class="nav-item">
           			<a class="nav-link " aria-current="page" href="/grupal-modulo-5/views/login.jsp">iniciar sesión</a>
         		</li>
-        		<li class="nav-item">
-         			<a class="nav-link" href="/grupal-modulo-5/iniciar-sesion">cerrar sesión</a>
-        		</li>
+				<%} %>
       		</ul>
     	</div> <!-- Ends navbar-collapse -->
   	</div> <!-- Ends navbar > container-fluid  -->

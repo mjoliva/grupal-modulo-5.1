@@ -146,7 +146,7 @@ public class CapacitacionDAO {
 
 	        try {
 	        	 // Establecer la conexión
-	            Class.forName("com.mysql.jdbc.Driver");
+	            Class.forName("com.mysql.cj.jdbc.Driver");
 
 	            // Establecer los detalles de la conexión
 	            String url = "jdbc:mysql://localhost:3306/grupal5";

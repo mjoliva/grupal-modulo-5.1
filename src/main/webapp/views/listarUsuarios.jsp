@@ -16,27 +16,27 @@
 	<%@ include file='/views/navbar.jsp'%>
 	<%@ page import="modelo.*" %>
 	<%@ page import="java.util.*" %>
-	<main class="container py-5">
+	<main class="container-fluid py-5">
 		<h1 class="text-center">Listado de Usuarios</h1>
 		<div class="row">
-		<div class="col py-4 w-75 justify-content-center text-center">
-		 <table class="table table-bordered">
+		<div class="col table-responsive">
+		 <table class="table table-striped table-hover" ><!--style="white-space: nowrap; overflow-x: auto;"  -->
                 <thead>
-                    <tr class="table-primary">
+                    <tr class="">
                         <th scope="col">Rut</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Apellidos</th>
-                        <th scope="col">Fecha de Nacimiento</th>
+                        <th scope="col">F. Nac.</th><!-- Fecha de Nacimiento -->
                         <th scope="col">Telefono</th>
                         <th scope="col">Dirección</th>
                         <th scope="col">Comuna</th>
                         <th scope="col">AFP</th>
-                        <th scope="col">Sistema de Salud</th>
+                        <th scope="col">Salud</th><!-- Sistema de Salud -->
                         <th scope="col">Edad</th>
                         <th scope="col">Area</th>
-                        <th scope="col">Experiencia Previa</th>
+                        <th scope="col">Experiencia</th><!-- Experiencia Previa -->
                         <th scope="col">Titulo</th>
-                        <th scope="col">Fecha de Ingreso</th>
+                        <th scope="col">Ingreso</th><!-- Fecha de Ingreso -->
                         <th scope="col">Acción</th>
                     </tr>
                 </thead>
@@ -87,12 +87,12 @@
 				                	<td>
 									<form action="#" method="GET" style="display:inline">
 									<input type="hidden" name="id" value="<%= u.getId() %>">
-									    <input type="submit" class="btn btn-outline-primary" value="Editar">
+									    <input type="submit" class="btn btn-outline-primary btn-sm" value="Editar">
 									</form>
 									<span>|</span>
 									<form action="#" method="POST" style="display:inline">
 									<input type="hidden" name="id" value="<%= u.getId() %>">
-									    <input type="submit" class="btn btn-outline-danger" value="Eliminar">
+									    <input type="submit" class="btn btn-outline-danger btn-sm" value="Eliminar">
 									</form>
 				                    </td>
 				                </tr>
