@@ -20,14 +20,14 @@ Este repositorio es la suma de entregas parciales del módulo 5 del bootcamp, or
 
 Las entregas se presentan en este README de acuerdo al orden natural en que han sido implementadas, no de acuerdo a su numeración. Esto es debido a que el orden sugerido implica utilizar dependencias que se implementan luego de la entrega en cuestión. Esta situación sucede en los ejercicios 2-3 y 4-5, por lo que el orden de implementación y entrega será:
 
-1. [Entrega 1 - Ejercicio 1](##_Entrega_1_*Ejercicio 1*)
-2. [Entrega 2 - Ejercicio 3](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-2-Ejercicio-3)
-3. [Entrega 3 - Ejercicio 2](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-3-Ejercicio-2)
-4. [Entrega 4 - Ejercicio 5](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-4-Ejercicio-5)
-5. [Entrega 5 - Ejercicio 4](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-5-Ejercicio-4)
-6. [Entrega 6 - Ejercicio 6](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-6-Ejercicio-6)
-7. [Entrega 7 - Ejercicio 7](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-7-Ejercicio-7)
-8. [Entrega 8 - Sprint](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#Entrega-8-Sprint)
+1. [Entrega 1 - Ejercicio 1](#Entrega-1-Ejercicio-1)
+2. [Entrega 2 - Ejercicio 3](#Entrega-2-Ejercicio-3)
+3. [Entrega 3 - Ejercicio 2](#Entrega-3-Ejercicio-2)
+4. [Entrega 4 - Ejercicio 5](#Entrega-4-Ejercicio-5)
+5. [Entrega 5 - Ejercicio 4](#Entrega-5-Ejercicio-4)
+6. [Entrega 6 - Ejercicio 6](#Entrega-6-Ejercicio-6)
+7. [Entrega 7 - Ejercicio 7](#Entrega-7-Ejercicio-7)
+8. [Entrega 8 - Sprint](#Entrega-8-Sprint)
 
 ## *Requerimientos generales*
 
