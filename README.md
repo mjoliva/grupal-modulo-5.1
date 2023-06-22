@@ -8,18 +8,22 @@ Este repositorio es la suma de entregas parciales del módulo 5 del bootcamp, or
 
 **Integrantes grupo 1**:
 
-- César Marín, repo en [Github](https://github.com/ceomarin)
-- Gabriel Ayala, repo en [Github](https://github.com/)
-- Jesu Oliva, repo en [Github](https://github.com/)
-- Ismael Vidal, repo en [Github](https://github.com/)
-- Carlos Pizarro repo en [Github](https://github.com/CarlosPizarroMorales/modulo-5)
+- César Marín, repo en [Github](https://github.com/ceomarin/grupal-modulo-5)
+- Gabriel Ayala, repo en [Github](https://github.com/Xenray0xo/grupal-modulo-5)
+- Jesu Oliva, repo en [Github](https://github.com/mjoliva/grupal-modulo-5)
+- Ismael Vidal, repo en [Github](https://github.com/IsmaelVidalBasare/grupal-modulo-5)
+- Carlos Pizarro repo en [Github](https://github.com/CarlosPizarroMorales/grupal-modulo-5)
 
 <hr>
 
 ## Sobre el orden de las entregas:
 
-Las entregas se presentan en este README de acuerdo al orden natural en que han sido implementadas, no de acuerdo a su numeración. Esto es debido a que el orden sugerido implica utilizar dependencias que se implementan luego de la entrega en cuestión. Esta situación sucede en los ejercicios 2-3 y 4-5, por lo que el orden de implementación y entrega será:
+Las entregas se presentan en este README de acuerdo al orden natural en que han sido implementadas, no de acuerdo a su numeración. Esto es debido a que el orden sugerido implica utilizar dependencias que se implementan luego de la entrega en cuestión. Esta situación sucede en los ejercicios 2-3 y 4-5, por lo que el orden de implementación y entrega será 1-3-2-5-4-6-7-8.
 
+## Contenidos:
+
+1. [Requerimientos generales](#Requerimientos-generales)
+2. [Casos de uso](#Casos-de-uso)
 1. [Entrega 1 - Ejercicio 1](#Entrega-1-Ejercicio-1)
 2. [Entrega 2 - Ejercicio 3](#Entrega-2-Ejercicio-3)
 3. [Entrega 3 - Ejercicio 2](#Entrega-3-Ejercicio-2)
@@ -91,6 +95,8 @@ Una empresa de asesorías en prevención de riesgos necesita contar con un siste
 que le permita administrar los principales procesos que se llevan a cabo en ella día a día.
 Hasta el momento se han definido las siguientes funcionalidades en el sistema:
 
+[Volver a Contenidos](#Contenidos)
+
 ## *Casos de uso*
 
 | Caso de Uso | Description | Implementado en |
@@ -125,17 +131,18 @@ Entregable:
 
 Requisitos de la entrega:
 
-1. Crear un proyecto web dinámico utilizando Eclipse IDE For Enterprise Java Developer.
-2. Configurar el ambiente de servidor apache Tomcat para poder levantar el proyecto web.
-3. Construir tres Servlets que utilicen métodos GET/POST. Los casos de uso implementados se pueden observar en la tabla de *[Casos de uso](notion://www.notion.so/ceomarin/readme-proyect-2486bf4fbcaa45f2b98cd12a51c28784#casos-de-uso)*
-4. Cada servlet puede generar el código HTML o llamar a un archivo JSP.
-5. La interfaz debe ser responsive, tener estilos y script JS si aplica.
+1. ✅ Crear un proyecto web dinámico utilizando Eclipse IDE For Enterprise Java Developer.
+2. ✅ Configurar el ambiente de servidor apache Tomcat para poder levantar el proyecto web.
+3. ✅ Construir tres Servlets que utilicen métodos GET/POST. Los casos de uso implementados se pueden observar en la tabla de *[Casos de uso](#casos-de-uso)*
+4. ✅ Cada servlet puede generar el código HTML o llamar a un archivo JSP.
+5. ✅ La interfaz debe ser responsive, tener estilos y script JS si aplica.
 
 Consideraciones:
 
 - Para las vistas se ha optado por utilizar archivos JSP utilizando el método `getRequestDispatcher()`
 - Se ha creado el package `controlador` para alojar los 3 servlets creados en esta entrega.
 - Para la entrega y el proyecto general se utilizará Javascript Vanilla y Bootstrap 5.3
+- **[Volver a Contenidos](#Contenidos)**
 
 ## Entrega 2 *Ejercicio 3*
 
@@ -143,26 +150,23 @@ Entregable:
 
 - Archivo comprimido RAR con el proyecto.
 
-Entregable:
-
-- Archivo comprimido RAR con el proyecto.
-
 Requisitos de la entrega:
 
-1. Crear servlet para Listar Capacitaciones: por ahora, solo desplegar sitio actual.
-2. Crear servlet para Login: Pagina para iniciar sesión.
-3. El servlet anterior debe validar usuario "admin" y clave 1234 de la siguiente manera:
-    1. Si las credenciales son correctas, redirecciona al CdU "Contacto"
-    2. Si las credenciales no son correctas, redirecciona al Login.
-4. Las opciones del menú Contacto, Crear Capacitacion y Listar Capacitaciones ahora deben validar que se ha iniciado sesión:
-    1. Si se ha iniciado correctamente, desplegar la vista
-    2. Si no se ha iniciado correctamente, redirigir al Login
+1. ✅ Crear servlet para Listar Capacitaciones: por ahora, solo desplegar sitio actual.
+2. ✅ Crear servlet para Login: Pagina para iniciar sesión.
+3. ✅ El servlet anterior debe validar usuario "admin" y clave 1234 de la siguiente manera:
+    1. ✅ Si las credenciales son correctas, redirecciona al CdU "Contacto"
+    2. ✅ Si las credenciales no son correctas, redirecciona al Login.
+4. ✅ Las opciones del menú Contacto, Crear Capacitacion y Listar Capacitaciones ahora deben validar que se ha iniciado sesión:
+    1. ✅ Si se ha iniciado correctamente, desplegar la vista
+    2. ✅ Si no se ha iniciado correctamente, redirigir al Login
 
 Consideraciones:
 
-1. El proyecto dice que el login debe estar basado en rut y clave. ¿Qué implementar?
-2. Es más razonable crear de inmediato una vista para Listar Capacitaciones con data *hardcodeada* pero que represente la vista final real para depurar estilos y responsividad.
-3. ¿No tiene sentido redirigir al usuario a Contacto una vez que ha logueado correctamente?
+- El proyecto dice que el login debe estar basado en rut y clave. ¿Qué implementar?
+- Se ha creado momentáneamente una vista con datos en duro sobre la tabla para revisar la presentación de la vista.
+- ¿No tiene sentido redirigir al usuario a Contacto una vez que ha logueado correctamente? Se ha redirigido al Inicio considerando la usabilidad.
+- **[Volver a Contenidos](#Contenidos)**
 
 ## Entrega 3 *Ejercicio 2*
 
@@ -172,16 +176,17 @@ Entregable:
 
 Requisitos de la entrega:
 
-1. Corregir servlets que producen HTML por archivos JSP.
-2. Aplicar CSS a cada sitio. Todos las vistas deben compartir la hoja de estilos.
-3. Si es necesario utilice Javascript, incluso con librerías si lo requiere.
-4. Las vistas deben compartir el mismo menú, a excepción del login.
-5. Implementar servlet de cierre de sesión, que redirige a vista del Login.
+1. ✅ Corregir servlets que producen HTML por archivos JSP.
+2. ✅ Aplicar CSS a cada sitio. Todos las vistas deben compartir la hoja de estilos.
+3. ✅ Si es necesario utilice Javascript, incluso con librerías si lo requiere. (no es necesario)
+4. ✅ Las vistas deben compartir el mismo menú, a excepción del login.
+5. ✅ Implementar servlet de cierre de sesión, que redirige a vista del Login: Se ha implementado directamente sobre el servlet de Inicio, realizando una petición GET. De esta manera, utiliza tantos los verbos POST (inicio sesión) como GET (cierre sesión).
 
 Consideraciones:
 
-1. Se utilizan archivos JSP desde la primera entrega, Bootstrap CSS, una sola hoja de estilos y un archivo Javascript Vanilla desde la primera entrega.
-2. No se entiende si la vista inicial debería ser el Login o es Inicio. ¿Para qué redigirir al usuario al Login cuando se cierra sesión?
+- Se utilizan archivos JSP desde la primera entrega, Bootstrap CSS, una sola hoja de estilos y un archivo Javascript Vanilla desde la primera entrega.
+- Se ha optado por que el usuario pueda acceder a la vista inicial pero no pueda acceder a las vistas correspondientes a las opciones del menú.
+- **[Volver a Contenidos](#Contenidos)**
 
 ## Entrega 4 *Ejercicio 5*
 
@@ -191,90 +196,75 @@ Entregable:
 
 Requisitos de la entrega:
 
-1. Cambie el nombre del package con los servlets a `controlador`
-2. Cree el package `modelo` y dentro, clases para:
-3. `Usuario`, `Cliente`, `Profesional`, `Administrativo` y `Capacitacion`. Utilice los atributos adecuados.
-4. Agregue servlet y vista para CdU "Crear usuario".
-5. Agregue servlet y vista para CdU "Listar usuarios".
-6. Mantener estilo general y responsividad.
-7. Las vistas creadas sólo pueden ser desplegadas haciendo Login.
+1. ✅ Cambie el nombre del package con los servlets a `controlador`
+2. ✅ Cree el package `modelo` y dentro, clases para:
+3. ✅ `Usuario`, `Cliente`, `Profesional`, `Administrativo` y `Capacitacion`. Utilice los atributos adecuados.
+4. ✅ Agregue servlet y vista para CdU "Crear usuario".
+5. ✅ Agregue servlet y vista para CdU "Listar usuarios".
+6. ✅ Mantener estilo general y responsividad.
+7. ✅ Las vistas creadas sólo pueden ser desplegadas haciendo Login.
 
 Consideraciones:
 
-1. Utilizar los nombres finales de packages desde un principio. **No hacer doble trabajo**. *Leer bien primero*.
-2. Definir formato utilizado para rut, puede ser: String[2], int[2], int rut + int digito, etc. Conversar.
+- Utilizar los nombres finales de packages desde un principio. **No hacer doble trabajo**. *Leer bien primero*.
+- Definir formato utilizado para rut, puede ser: String[2], int[2], int rut + int digito, etc. Conversar.
+- **[Volver a Contenidos](#Contenidos)**
 
 ## Entrega 5 *Ejercicio 4*
-
-Entregable:
-
-- Archivo comprimido RAR con el proyecto.
-
-Requisitos de la entrega:
-
-1. Utilizar BD creada en módulo 3 o crear ahora.
-2. Crear package `conexion` con una clase que utilice patrón Singleton para retornar una conexión a la BD.
-3. Sobre clase Capacitacion:
-    1. Debe tener método para permitir registrar una capacitación en BD.
-    2. Debe tener método para permitir listar capacitaciones registradas en BD.
-4. En vista Crear Capacitación, validar campos en cliente con JS antes de enviar. Usar guía del módulo 4.
-5. Considerar regla de integridad referencial Cliente 0..N Capacitacion: desactivar llave por ahora.
-
-Consideraciones:
-
-1. Sobre la BD: fijarse en entidades finales para crear modelo.
-
 ## Entrega 6 *Ejercicio 6*
 
+### **Observación:** Estas entregas fueron reemplazadas en sus requerimientos originales por un CRUD completo sobre modelo.Capacitaciones utilizando el conector obdc.mysql, el patrón Singleton para realizar la conexión y el patrón DAO para gestionar el acceso a la base de datos.
+
 Entregable:
 
 - Archivo comprimido RAR con el proyecto.
 
 Requisitos de la entrega:
 
-1. Verificar *integridad* de construcción de clases en package `modelo`.
-2. Crear package `interfaces`, con una interfaz con 2 métodos:
-    1. `public ArrayList<Capacitacion> listarCapacitaciones();` para listar capacitaciones.
-    2. `public void registrarCapacitacion(Capacitacion c);` para crear capacitación.
-3. Crear package `implementacion` con una clase que implementa la interfaz anterior.
-4. `listarCapacitaciones();` debe listar al menos 3 capacitaciones creadas manualmente.
-5. `registrarCapacitacion(c);` debe mostrar objeto `c` por la consola de Java.
-6. Modificar servlet "Listar Capacitaciones". Ahora debe invocar el método `listarCapacitaciones()` de la clase anterior para mostrar el resultado en la vista JSP.
-7. Modificar servlet "Crear capacitacion". Ahora al recibir los datos procesados, debe invocar otro servlet que crea objeto `Capacitacion c` y con ese objeto invoca `registrarCapacitacion(c)`. Luego, muestra mensaje de confirmación por vista JSP.
+1. ✅ Reemplazados según la [observación](#Observacion) anterior.
+2. ✅ Campos de modelo.Capacitacion deben ser validados en formulario antes de enviar (se han utilizado las posibilidades de control de los elementos `<input>`)
+3. ✅ Se han creado servlets de requerimientos originales que coinciden con la nueva funcionalidad solicitada [ListarCapacitaciones](./src/main/java/controlador/ListarCapacitaciones.java), [CrearCapacitacion](./src/main/java/controlador/CrearCapacitacion.java))
+4. ✅ Todas las clases del modelo de han creado conforme a la práctica aprendida: constructor x2, getters/setters, toString()
+5. ✅ El listado de instancias de Capacitacion se ha obtenido de la base de datos mediante el patrón DAO para luego ser enviado a la vista JSP.
 
 Consideraciones:
 
-1. Existe "NOTA 2": Los ejercicios solicitados no registran datos en BD. Tal funcionalidad será abordada en otro ejercicio. Confirmar
-2. Existe "NOTA 3": Usar esta [referencia](http://blog.oscarscode.com/es/java-es/introduccion-a-mvc-con-servlets-y-jsp/) como ejemplo de lo que se busca lograr.
-3. Ejercicio ambiguo. Consultar bien el uso o no-uso de la BD en este ejercicio.
-4. Requisitos que no interfieren con ejercicios anteriores deberían ser implementados desde el principio si es posible.
-5. Crear código de "Listar Capacitaciones" y "Crear capacitación" lo antes posible y dejar comentado si interfiere con entregas anteriores.
+- Se han eliminado requerimientos oscuros o ambiguos, enfocándose en crear funcionalidad ampliada respecto a los requerimientos originales (se ha creado un CRUD completo, donde sólo se solicitaba Create & Read)
+- **[Volver a Contenidos](#Contenidos)**
+
 
 ## Entrega 7 *Ejercicio 7*
 
 Entregable:
 
-- Documento con al menos 4 capturas de pantalla documentando el proceso.
+- Documento con al menos 4 capturas de pantalla documentando el proceso y listado de integrantes.
 
 Requisitos de la entrega:
 
-1. Agregar funcionalidad para listar usuarios, creando clases necesarias para ello.
-2. Generar archivo WAR con el proyecto.
-3. Cargar WAR en instancia local del servidor Tomcat
-4. Ejecutar plataforma ingresando directamente desde el navegador a la dirección de Tomcat
+1. ✅ Agregar funcionalidad para listar usuarios, creando clases necesarias para ello. (Se traslada a Sprint)
+2. ✅ Generar archivo WAR con el proyecto.
+3. ✅ Cargar WAR en instancia local del servidor Tomcat
+4. ✅ Ejecutar plataforma ingresando directamente desde el navegador a la dirección de Tomcat
 
 Consideraciones:
 
-1. Por ahora ninguna.
+1. Al no instalar el servidor Tomcat en el sistema operativo, es necesario modificar el archivo `/config/tomcat-users.xml`. Debe descomentarse la siguiente línea:  `<user username="admin" password="admin" roles="manager-gui"/>` y configurar valorse para el username y el password.
+
+**[Volver a Contenidos](#Contenidos)**
 
 ## Entrega 8 *Sprint*
 
 Entregable:
 
-- Archivo comprimido RAR con el proyecto.
+- Archivo comprimido RAR con el proyecto y PDF con capturas de evidencia del despliegue en servidor local (WAR).
 
 Requisitos de la entrega:
-1.
+1. Actualizar caso de uso "Crear Usuario" para permitir crear cualquier tipo de usuario entre Cliente, Administrativo, Profesional.
+2. Actualizar la funcionalidad para Editar cualquier tipo de usuario.
+3. Crear un método que permita mostrar por consola de Java los valores de los parámetros que envía el formulario del caso de uso Contacto.
 
 Consideraciones:
-1.
+- Se crea CRUD completo sobre Usuario.
+- Se crea un solo DAO para la relación con la base de datos independiente del tipo de usuario.
+- Se crea una tabla general que contiene cualquier tipo de usuario y valores `NULL` en los campos que no le corresponden.
+- **[Volver a Contenidos](#Contenidos)**
